@@ -63,8 +63,9 @@ img.UserComment = UserComment
 
 adresse = st.text_input("Quelle est votre adresse (ville ou adresse complète) ? ")
 getLoc = loc.geocode(adresse)
-img.GPSLatitude = getLoc.latitude
-img.GPSLongitude = getLoc.longitude
+if adresse :
+    img.GPSLatitude = getLoc.latitude
+    img.GPSLongitude = getLoc.longitude
 
 # Liste les tags Exif  de l'image (pour test)
 st.write(sorted(img.list_all()))
