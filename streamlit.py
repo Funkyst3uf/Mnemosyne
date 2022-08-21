@@ -40,8 +40,8 @@ img.Model = Model
 DateTime = st.text_input("Date des dernières modifications (YYYY:MM:DD HH:MM:SS): " )
 img.DateTime = DateTime
 
-ImageDescription = st.text_input("Description de l'image : ")
-img.ImageDescription = ImageDescription
+Description = st.text_input("Description de l'image : ")
+img.Description = Description
 
 Copyright = st.text_input("Copyright de l'image : ")
 img.Copyright = Copyright
@@ -49,8 +49,8 @@ img.Copyright = Copyright
 Artist = st.text_input("Artiste photographié ou auteur de l'oeuvre photgraphiée : ")
 img.Artist = Artist
 
-UserComment = st.text_input("Commentaire : ")
-img.UserComment = UserComment
+Comment = st.text_input("Commentaire : ")
+img.Comment = Comment
 
 adresse = st.text_input("Quelle est votre adresse (ville ou adresse complète) ? ")
 getLoc = loc.geocode(adresse)
@@ -76,11 +76,10 @@ st.write(f'Make: {img.get("Make")}')
 st.write(f'Model : {img.get("Model")}')
 st.write(f'DateTime : {img.get("DateTime")}')
 st.write(f'Orientation : {img.get("Orientation")}')
-#st.write(f'Flash : {img.get("Flash")}')
 st.write(f'Compression : {img.get("Compression")}')
-st.write(f'ImageDescription : {img.get("ImageDescription")}')
+st.write(f'Description : {img.get("Description")}')
 st.write(f'Copyright : {img.get("Copyright")}')
 st.write(f'Artist : {img.get("Artist")}')
-st.write(f'UserComment : {img.get("UserComment")}')
+st.write(f'Comment : {img.get("Comment")}')
 st.write(f'GPSLatitude : {img.get("GPSLatitude")}')
 st.write(f'GPSLongitude : {img.get("GPSLongitude")}')
