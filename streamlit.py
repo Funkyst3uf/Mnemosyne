@@ -44,7 +44,7 @@ img.DateTime = DateTime
 #img.Orientation = Orientation
 
 Flash = st.text_input("Utilisation du flash : ")
-#img.Flash = Flash
+img.Flash = Flash
 
 #Compression = st.text_input("Compression de l'image (JPEG = 6) : ")
 #img.Compression = Compression
@@ -68,7 +68,7 @@ if adresse :
     img.GPSLongitude = getLoc.longitude
 
 # Liste les tags Exif  de l'image (pour test)
-st.write(sorted(img.list_all()))
+#st.write(sorted(img.list_all()))
 
 # Sauvegarde les modifications
 with open(f'./mnemo.jpg', 'wb') as new_img_file:
