@@ -40,15 +40,6 @@ img.Model = Model
 DateTime = st.text_input("Date des dernières modifications (YYYY:MM:DD HH:MM:SS): " )
 img.DateTime = DateTime
 
-#Orientation = st.text_input("Orientation de la photo : ")
-#img.Orientation = Orientation
-
-#Flash = st.text_input("Utilisation du flash : ")
-#img.Flash = Flash
-
-#Compression = st.text_input("Compression de l'image (JPEG = 6) : ")
-#img.Compression = Compression
-
 ImageDescription = st.text_input("Description de l'image : ")
 img.ImageDescription = ImageDescription
 
