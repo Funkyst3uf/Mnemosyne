@@ -70,7 +70,16 @@ if adresse :
 # Liste les tags Exif  de l'image (pour test)
 st.write(sorted(img.list_all()))
 
+# Sauvegarde les modifications
+with open(f'./mnemo.jpg', 'wb') as new_img_file:
+    new_img_file.write(img.get_file())
+    
+    
 
+# réouverture de l'image en mode lecture pour vérifier les métadonnées
+with open('./mnemo.jpg', 'rb') as img_file:
+    img = Image(img_file)
+    
 # Affiche les métadonnées à jour
 st.write(f'Make: {img.get("Make")}')
 st.write(f'Model : {img.get("Model")}')
@@ -84,7 +93,3 @@ st.write(f'Artist : {img.get("Artist")}')
 st.write(f'UserComment : {img.get("UserComment")}')
 st.write(f'GPSLatitude : {img.get("GPSLatitude")}')
 st.write(f'GPSLongitude : {img.get("GPSLongitude")}')
-   
-# Sauvegarde les modifications
-with open(f'./mnemo.jpg', 'wb') as new_img_file:
-    new_img_file.write(img.get_file())
