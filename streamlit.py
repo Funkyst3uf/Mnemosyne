@@ -41,7 +41,7 @@ DateTime = st.text_input("Date des dernières modifications (YYYY:MM:DD HH:MM:SS
 img.DateTime = DateTime
 
 truc = st.text_input("truc de l'image : ")
-img.truc = Description
+img.truc = truc
 
 Copyright = st.text_input("Copyright de l'image : ")
 img.Copyright = Copyright
