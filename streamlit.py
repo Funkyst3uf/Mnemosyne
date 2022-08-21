@@ -8,6 +8,8 @@
 import streamlit as st
 from exif import Image
 from PIL import Image as P_Image
+from geopy.geocoders import Nominatim
+
 
 # crée des conteneurs (colonnes)
 col1, col2, col3 = st.columns(3)
@@ -17,6 +19,10 @@ image = P_Image.open('mnemo.jpg')   # placez l'image dans le repertoire d'exécu
 
 with col2 : # place l'image dans le conteneur 2 (au cente de la page)
     st.image(image, caption='Mnemosyne, de D. G. Rossetti')
+    
+# appel de l'outil Nominatim (pour géolocation)
+loc = Nominatim(user_agent="GetLoc")
+ 
 
 # traitement de l'image (exif)
 with open('./mnemo.jpg', 'rb') as img_file:
@@ -55,6 +61,11 @@ img.Artist = Artist
 UserComment = st.text_input("Commentaire : ")
 img.UserComment = UserComment
 
+adresse = st.text_input("Quelle est votre adresse (ville ou adresse complète) ? ")
+getLoc = loc.geocode(adresse)
+img.GPSLatitude = getLoc.latitude
+img.GPSLongitude = getLoc.longitude
+
 # Liste les tags Exif  de l'image (pour test)
 st.write(sorted(img.list_all()))
 
@@ -70,6 +81,8 @@ st.write(f'ImageDescription : {img.get("ImageDescription")}')
 st.write(f'Copyright : {img.get("Copyright")}')
 st.write(f'Artist : {img.get("Artist")}')
 st.write(f'UserComment : {img.get("UserComment")}')
+st.write(f'GPSLatitude : {img.get("GPSLatitude")}')
+st.write(f'GPSLongitude : {img.get("GPSLongitude")}')
    
 # Sauvegarde les modifications
 with open(f'./mnemo.jpg', 'wb') as new_img_file:
