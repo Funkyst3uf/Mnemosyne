@@ -5,31 +5,26 @@
 # VERSION : 0.1 du 20/08/2022
 # Exécution (w/ Uvicorn) : uvicorn ma-playlist-app --reload
 
-
 import streamlit as st
 from exif import Image
 from PIL import Image as P_Image
 
-#crée des conteneurs (colonnes)
+# crée des conteneurs (colonnes)
 col1, col2, col3 = st.columns(3)
 
-
 # affiche l'image avec PIL
-image = P_Image.open('mnemo.jpg') 
+image = P_Image.open('mnemo.jpg')   # placez l'image dans le repertoire d'exécution de streamlit
 
-with col2 :
+with col2 : # place l'image dans le conteneur 2 (au cente de la page)
     st.image(image, caption='Mnemosyne, de D. G. Rossetti')
-
 
 # traitement de l'image (exif)
 with open('./mnemo.jpg', 'rb') as img_file:
     img = Image(img_file)
 
-
 st.title("Modifiez les tags EXIF de l'image")
 
 # Création / modification des tags Exif selon saisie utilisateur
-
 Make = st.text_input("Constructeur de l'appareil photo : ")
 img.Make = Make
 
@@ -79,6 +74,3 @@ st.write(f'UserComment : {img.get("UserComment")}')
 # Sauvegarde les modifications
 with open(f'./mnemo.jpg', 'wb') as new_img_file:
     new_img_file.write(img.get_file())
-
-
-# https://github.com/Funkyst3uf/Mnemosyne.git
