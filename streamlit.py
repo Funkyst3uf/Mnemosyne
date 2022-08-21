@@ -36,25 +36,25 @@ st.markdown("<h2 style='text-align: center; color: black;'>Modifiez les tags EXI
 # Création / modification des tags Exif selon saisie utilisateur
 st.write('') # saute une ligne
 copyright = st.text_input("Copyright de l'image : ")
-img.copyright = copyright
+if copyright : img.copyright = copyright
 
 artist = st.text_input("Nom du photographe : ")
-img.artist = artist
+if artist : img.artist = artist
 
 image_description = st.text_input("Description de l'image : ")
-img.image_description = image_description
+if image_description : img.image_description = image_description
 
 datetime = st.text_input("Date des dernières modifications (YYYY:MM:DD HH:MM:SS): " )
-img.datetime = datetime
+if datetime : img.datetime = datetime
 
 make = st.text_input("Constructeur de l'appareil photo utilisé : ")
-img.make = make
+if make : img.make = make
 
 model = st.text_input("Modèle de l'appareil : ")
-img.model = model
+if model : img.model = model
 
 software = st.text_input("Software de l'appareil : ")
-img.software = software
+if software : img.software = software
 
 adresse = st.text_input("Quelle est votre adresse (ville ou adresse complète) ? ")
 getLoc = loc.geocode(adresse)
