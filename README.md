@@ -6,7 +6,7 @@ Auteur : Jonathan N.
 
 Test de Streamlit
 
-Réalisé dans le cadre du cours Outils Collaboratifs (License Info.), Université Paris 8
+Réalisé dans le cadre du cours Outils Collaboratifs (Licence Info.), Université Paris 8
 
 Rôle : Affiche une photo (JPG) dans un navigateur web et permet à l'utilisateur de modifier quelques tags EXIF
 
