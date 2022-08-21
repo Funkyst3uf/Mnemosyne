@@ -43,8 +43,8 @@ img.DateTime = DateTime
 #Orientation = st.text_input("Orientation de la photo : ")
 #img.Orientation = Orientation
 
-Flash = st.text_input("Utilisation du flash : ")
-img.Flash = Flash
+#Flash = st.text_input("Utilisation du flash : ")
+#img.Flash = Flash
 
 #Compression = st.text_input("Compression de l'image (JPEG = 6) : ")
 #img.Compression = Compression
